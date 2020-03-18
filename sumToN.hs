@@ -1,12 +1,6 @@
 main :: IO ()
-main = print( getN )
+main = print( sumN 9 )
 
-getN :: () -> Int
-getN = do putStrLn "Please enter N"
-          x <- readLn
-          return x
-
-
-sumToN :: () -> Int
-sumToN = do x <- 10
-            return x
+sumN :: Int -> Int
+sumN 0 = 0
+sumN x = x + sumN(x-1) 
