@@ -1,18 +1,5 @@
-main :: IO ()
-main = do{
-  let startL = [1, 1]
-  print(fibbTo emptyL)
-}
+fibs :: [Integer]
+fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 
-
-addTwoNumbers :: Integer -> Integer -> Integer
-addTwoNumbers x y = x + y
-
-updateFibbList :: List -> List
-
-
-fibbTo :: List -> List
-fibbTo x = do putStrLn "Cut off? "
-            lim <- readLn
-            if last x < lim
-              then updateFibbList
+firstNFib :: Int -> [Integer]
+firstNFib n = take n fibs
